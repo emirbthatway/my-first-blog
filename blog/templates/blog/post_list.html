@@ -1,43 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emirbthatway Blog</title>
-    <style>
-        body { background-color: #F7CAC9;}
-        
-    </style>
-</head>
-<body>
-    <header>
-        <h1><a href="/">Django Blog</a></h1>
-        
-    </header>
-   
+{% extends 'blog/base.html' %}
+
+{% block content %}
     {% for post in posts %}
-    <article>
-        <time>published: {{ post.published_date }}</time>
-        <h2><a href="">{{ post.title }}</a></h2>
-        <p>{{ post.text|linebreaksbr }}</p>
-    </article>
-{% endfor %}
-
-
-    <article>
-        <br><br>
-        <time><em>Published: 04/30/2023, 1:51</em></time>
-        <h2><a href="">My first post</a></h2>
-        <p>Rise and Shine with D.</p>
-    </article>
-
-    <article>
-        <time><em>Published: 29/11/2021, 21:30</em></time>
-        <h2><a href="">My second post</a></h2>
-        <p>22 November 1963, Parkland Memorial Hospital, Dallas, Texas, USA</p>
-        <time><em>Published: 11/22/1963, 12:30</em></time>
-    </article>
-
-</body>
-</html>
+        <article class="post">
+            <time class="date">
+                {{ post.published_date }}
+            </time>
+            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+            
+        </article>
+    {% endfor %}
+{% endblock %}
