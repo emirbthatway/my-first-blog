@@ -73,3 +73,39 @@ body a
 {
     text-decoration: none;
 }
+
+.d1
+{
+    text-align: right;
+    color: black;
+}
+
+.d1 button{
+    background-color: #00b4d8;
+    border: none;
+    color: white;
+    padding: 7px 14px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: -5px 3px;
+    cursor: pointer;
+}
+
+.comment {
+    margin: 20px 0px 20px 20px;
+}
+
+.d2 button{
+    background-color: #00b4d8;
+    border: none;
+    color: white;
+    padding: 7px 14px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 3px 3px;
+    cursor: pointer;
+}
